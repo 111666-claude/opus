@@ -37,4 +37,16 @@ var (
 	errInvalidLossRate = errors.New("loss rate must be 0-100")
 
 	errInvalidBandwidth = errors.New("invalid bandwidth")
+
+	errRepacketizerConfigMismatch = errors.New("packet TOC configuration differs from the repacketizer stream")
+
+	errRepacketizerTimestampGap = errors.New("timestamp gap in the repacketizer packet stream")
+
+	errRepacketizerNotEnoughFrames = errors.New("not enough buffered frames to build the requested packet")
+
+	errRepacketizerFrameExceedsMTU = errors.New("single frame exceeds the MTU")
+
+	errInvalidRepacketizeFrameCount = errors.New("invalid repacketize frame count target")
+
+	errInvalidRepacketizeMTU = errors.New("invalid repacketize MTU")
 )

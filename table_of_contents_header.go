@@ -216,6 +216,12 @@ func (f frameDuration) nanoseconds() int {
 	return 0
 }
 
+// samples48k returns the frame duration in samples on the Opus RTP
+// timestamp clock, which always runs at 48 kHz (RFC 7587 Section 4.1).
+func (f frameDuration) samples48k() int {
+	return f.nanoseconds() * 48 / 1000000
+}
+
 // See configuration for mapping of frameDuration to configuration numbers
 // https://datatracker.ietf.org/doc/html/rfc6716#section-3.1
 func (c configuration) frameDuration() frameDuration {
